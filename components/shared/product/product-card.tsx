@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import ProductPrice from './product-price';
 
 export type Product = {
   name: string;
@@ -47,7 +48,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             <span className="text-yellow-500">★</span>
             {product.rating} ({product.numReviews})
           </p>
-          <div className="font-bold text-xl">${product.price}</div>
+          <ProductPrice value={product.price} />
         </div>
       </CardContent>
     </Card>
