@@ -1,4 +1,4 @@
-# next-storefront 🛍️
+# next-storefront
 Full-stack eCommerce platform built with Next.js, PostgreSQL, Prisma, NextAuth, Stripe, and PayPal.
 
 ---
@@ -10,7 +10,7 @@ This project showcases how to build a production-ready online store using indust
 
 ---
 
-## 🚀 Features
+## Features
 
 - Modern responsive UI with dynamic layouts
 - Product listing and product details pages
@@ -27,7 +27,7 @@ This project showcases how to build a production-ready online store using indust
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 ### Frontend
 - Next.js
@@ -56,39 +56,48 @@ This project showcases how to build a production-ready online store using indust
 ---
 
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+### 1. Configure Environment Variables
+Create a new `.env` file in the root of the project and define your PostgreSQL database connection URL:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```env
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+This project uses `pnpm` as its package manager.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Setup the Prisma Database
+Synchronize the Prisma schema configuration with your database to automatically provision the required relational tables:
 
-## Learn More
+```bash
+pnpm dlx prisma db push
+```
 
-To learn more about Next.js, take a look at the following resources:
+After pushing, execute the standardized seed script specifically designed to populate your store with default mock data:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dlx prisma db seed
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run the Development Server
+Once the database is successfully configured, launch the Next.js local environment:
 
-## Deploy on Vercel
+```bash
+pnpm dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to explore the platform.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Explore Database via Prisma Studio
+Prisma Studio provides a fully integrated visual database GUI editor for reviewing and administrating your PostgreSQL entries without typing complex queries.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can spin it up natively inside a new terminal via:
+```bash
+pnpm dlx prisma studio
+```
+Prisma studio operates persistently by default on [http://localhost:5555](http://localhost:5555).
