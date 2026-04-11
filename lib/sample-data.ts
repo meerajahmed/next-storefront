@@ -1,0 +1,72 @@
+export const sampleData = {
+  products: [
+    {
+      name: 'Polo Sporting Stretch Shirt',
+      slug: 'polo-sporting-stretch-shirt',
+      category: "Men's Dress Shirts",
+      description: 'Classic Polo style with modern comfort',
+      images: [
+        '/images/sample-products/img1.avif',
+        '/images/sample-products/img2.avif',
+      ],
+      price: '59.99',
+      brand: 'Polo',
+      rating: '4.5',
+      numReviews: 10,
+      stock: 5,
+      isFeatured: true,
+      banner: 'banner-1.jpg',
+    },
+    {
+      name: 'Brooks Brothers Classic Fit',
+      slug: 'brooks-brothers-classic-fit',
+      category: "Men's Dress Shirts",
+      description: 'A timeless dress shirt for every occasion',
+      images: [
+        '/images/sample-products/img2.avif',
+        '/images/sample-products/img3.avif',
+      ],
+      price: '89.99',
+      brand: 'Brooks Brothers',
+      rating: '4.7',
+      numReviews: 24,
+      stock: 12,
+      isFeatured: false,
+      banner: null,
+    },
+    {
+      name: 'Tommy Hilfiger Slim Fit',
+      slug: 'tommy-hilfiger-slim-fit',
+      category: "Men's Dress Shirts",
+      description: 'Sleek and modern slim fit dress shirt',
+      images: [
+        '/images/sample-products/img3.avif',
+        '/images/sample-products/img4.avif',
+      ],
+      price: '69.50',
+      brand: 'Tommy Hilfiger',
+      rating: '4.3',
+      numReviews: 18,
+      stock: 8,
+      isFeatured: true,
+      banner: 'banner-2.jpg',
+    },
+    {
+      name: 'Calvin Klein Wrinkle-Free',
+      slug: 'calvin-klein-wrinkle-free',
+      category: "Men's Dress Shirts",
+      description: 'Stay sharp all day with this wrinkle-free material',
+      images: [
+        '/images/sample-products/img4.avif',
+        '/images/sample-products/img1.avif',
+      ],
+      price: '49.99',
+      brand: 'Calvin Klein',
+      rating: '4.6',
+      numReviews: 32,
+      stock: 15,
+      isFeatured: false,
+      banner: null,
+    }
+  ]
+};
