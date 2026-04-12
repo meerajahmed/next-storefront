@@ -15,6 +15,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
           alt="product image"
           fill
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-center transition-all duration-500 hover:scale-105"
         />
       </div>
@@ -33,6 +34,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
                 src={image}
                 alt="product image"
                 fill
+                sizes="100px"
                 className="object-cover object-center"
               />
             </button>
