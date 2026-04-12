@@ -2,21 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import ProductPrice from './product-price';
-
-export type Product = {
-  name: string;
-  slug: string;
-  category: string;
-  description: string;
-  images: string[];
-  price: string;
-  brand: string;
-  rating: string;
-  numReviews: number;
-  stock: number;
-  isFeatured: boolean;
-  banner: string | null;
-};
+import { Product } from '@/lib/validators';
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (

@@ -1,4 +1,5 @@
 import { prisma } from "@/db/prisma";
+import { Prisma } from "@prisma/client";
 
 // Get latest products
 export async function getLatestProducts() {
@@ -7,7 +8,8 @@ export async function getLatestProducts() {
     orderBy: { createdAt: 'desc' },
   });
 
-  return data.map((product) => ({
+  // Maps the Database data into the UI-friendly format.
+  return data.map((product: Prisma.ProductGetPayload<{}>) => ({
     ...product,
     price: product.price.toString(),
     rating: product.rating.toString(),
