@@ -1,7 +1,7 @@
 import { APP_NAME } from '@/lib/constants';
 
 const Footer = () => {
-    const currentYear = 2025;
+    const currentYear = 2026;
 
     return (
         <footer className="border-t border-gray-200 mt-auto">
